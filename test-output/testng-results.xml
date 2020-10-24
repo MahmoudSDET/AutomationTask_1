@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="3" total="15" passed="6" failed="6" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-10-24T16:48:00 EET" name="AutomationTask" finished-at="2020-10-24T16:50:25 EET" duration-ms="144992">
+    <groups>
+    </groups>
+    <test started-at="2020-10-24T16:48:00 EET" name="Test" finished-at="2020-10-24T16:50:25 EET" duration-ms="144992">
+      <class name="tests.UserRegistrationTest">
+        <test-method is-config="true" signature="startdriver(java.lang.String)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:48:10 EET" name="startdriver" finished-at="2020-10-24T16:48:18 EET" duration-ms="8080" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startdriver -->
+        <test-method signature="UserCannotRegisterWithFirstnNameStartsWithSmallLetter()[pri:2, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:48:18 EET" name="UserCannotRegisterWithFirstnNameStartsWithSmallLetter" finished-at="2020-10-24T16:48:22 EET" duration-ms="4336" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [false] but found [true],
+expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [false] but found [true],
+expected [false] but found [true]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at tests.UserRegistrationTest.UserCannotRegisterWithFirstnNameStartsWithSmallLetter(UserRegistrationTest.java:122)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCannotRegisterWithFirstnNameStartsWithSmallLetter -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:48:22 EET" name="tearDown" finished-at="2020-10-24T16:48:23 EET" duration-ms="409" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserCannotRegisterWithFirstnNameStartsWithSmallLetter status=FAILURE method=UserRegistrationTest.UserCannotRegisterWithFirstnNameStartsWithSmallLetter()[pri:2, instance:tests.UserRegistrationTest@4865434e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="startdriver(java.lang.String)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:48:23 EET" name="startdriver" finished-at="2020-10-24T16:48:31 EET" duration-ms="8163" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startdriver -->
+        <test-method signature="UserCannotRegisterWithLastNameStartsWithSmallLetter()[pri:3, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:48:31 EET" name="UserCannotRegisterWithLastNameStartsWithSmallLetter" finished-at="2020-10-24T16:48:35 EET" duration-ms="3721" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [false] but found [true],
+expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [false] but found [true],
+expected [false] but found [true]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at tests.UserRegistrationTest.UserCannotRegisterWithLastNameStartsWithSmallLetter(UserRegistrationTest.java:155)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCannotRegisterWithLastNameStartsWithSmallLetter -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:48:35 EET" name="tearDown" finished-at="2020-10-24T16:48:35 EET" duration-ms="387" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserCannotRegisterWithLastNameStartsWithSmallLetter status=FAILURE method=UserRegistrationTest.UserCannotRegisterWithLastNameStartsWithSmallLetter()[pri:3, instance:tests.UserRegistrationTest@4865434e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="startdriver(java.lang.String)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:48:35 EET" name="startdriver" finished-at="2020-10-24T16:48:43 EET" duration-ms="8040" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startdriver -->
+        <test-method signature="UserCannotRegisterWithFirstnNameAndLastNameStartsWithSmallLetter()[pri:4, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:48:43 EET" name="UserCannotRegisterWithFirstnNameAndLastNameStartsWithSmallLetter" finished-at="2020-10-24T16:48:47 EET" duration-ms="3683" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [false] but found [true],
+expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [false] but found [true],
+expected [false] but found [true]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at tests.UserRegistrationTest.UserCannotRegisterWithFirstnNameAndLastNameStartsWithSmallLetter(UserRegistrationTest.java:185)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCannotRegisterWithFirstnNameAndLastNameStartsWithSmallLetter -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:48:47 EET" name="tearDown" finished-at="2020-10-24T16:48:47 EET" duration-ms="481" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserCannotRegisterWithFirstnNameAndLastNameStartsWithSmallLetter status=FAILURE method=UserRegistrationTest.UserCannotRegisterWithFirstnNameAndLastNameStartsWithSmallLetter()[pri:4, instance:tests.UserRegistrationTest@4865434e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="startdriver(java.lang.String)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:48:47 EET" name="startdriver" finished-at="2020-10-24T16:48:55 EET" duration-ms="8071" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startdriver -->
+        <test-method signature="UserCannotRegisterWithFirstnNameAndLastNameWhenMatched()[pri:5, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:48:55 EET" name="UserCannotRegisterWithFirstnNameAndLastNameWhenMatched" finished-at="2020-10-24T16:48:59 EET" duration-ms="3691" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [false] but found [true],
+expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [false] but found [true],
+expected [false] but found [true]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at tests.UserRegistrationTest.UserCannotRegisterWithFirstnNameAndLastNameWhenMatched(UserRegistrationTest.java:216)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCannotRegisterWithFirstnNameAndLastNameWhenMatched -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:48:59 EET" name="tearDown" finished-at="2020-10-24T16:48:59 EET" duration-ms="368" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserCannotRegisterWithFirstnNameAndLastNameWhenMatched status=FAILURE method=UserRegistrationTest.UserCannotRegisterWithFirstnNameAndLastNameWhenMatched()[pri:5, instance:tests.UserRegistrationTest@4865434e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="startdriver(java.lang.String)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:48:59 EET" name="startdriver" finished-at="2020-10-24T16:49:08 EET" duration-ms="8443" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startdriver -->
+        <test-method signature="UserCannotRegisterWithInvalidMobileNumber()[pri:6, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:08 EET" name="UserCannotRegisterWithInvalidMobileNumber" finished-at="2020-10-24T16:49:12 EET" duration-ms="3731" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [false] but found [true],
+expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [false] but found [true],
+expected [false] but found [true]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at tests.UserRegistrationTest.UserCannotRegisterWithInvalidMobileNumber(UserRegistrationTest.java:246)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCannotRegisterWithInvalidMobileNumber -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:12 EET" name="tearDown" finished-at="2020-10-24T16:49:12 EET" duration-ms="361" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserCannotRegisterWithInvalidMobileNumber status=FAILURE method=UserRegistrationTest.UserCannotRegisterWithInvalidMobileNumber()[pri:6, instance:tests.UserRegistrationTest@4865434e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="startdriver(java.lang.String)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:12 EET" name="startdriver" finished-at="2020-10-24T16:49:20 EET" duration-ms="8245" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startdriver -->
+        <test-method signature="UserCannotRegisterWithInvalidEmail()[pri:7, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:20 EET" name="UserCannotRegisterWithInvalidEmail" finished-at="2020-10-24T16:49:24 EET" duration-ms="3640" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCannotRegisterWithInvalidEmail -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:24 EET" name="tearDown" finished-at="2020-10-24T16:49:24 EET" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserCannotRegisterWithInvalidEmail status=SUCCESS method=UserRegistrationTest.UserCannotRegisterWithInvalidEmail()[pri:7, instance:tests.UserRegistrationTest@4865434e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="startdriver(java.lang.String)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:24 EET" name="startdriver" finished-at="2020-10-24T16:49:33 EET" duration-ms="9213" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startdriver -->
+        <test-method signature="UserCannotRegisterWithInvalidPassword()[pri:8, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:33 EET" name="UserCannotRegisterWithInvalidPassword" finished-at="2020-10-24T16:49:37 EET" duration-ms="3706" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [false] but found [true],
+expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [false] but found [true],
+expected [false] but found [true]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at tests.UserRegistrationTest.UserCannotRegisterWithInvalidPassword(UserRegistrationTest.java:302)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCannotRegisterWithInvalidPassword -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:37 EET" name="tearDown" finished-at="2020-10-24T16:49:37 EET" duration-ms="371" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserCannotRegisterWithInvalidPassword status=FAILURE method=UserRegistrationTest.UserCannotRegisterWithInvalidPassword()[pri:8, instance:tests.UserRegistrationTest@4865434e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="startdriver(java.lang.String)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:37 EET" name="startdriver" finished-at="2020-10-24T16:49:45 EET" duration-ms="8039" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startdriver -->
+        <test-method signature="UserCannotRegisterWithInvalidMatchedPassword()[pri:9, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:45 EET" name="UserCannotRegisterWithInvalidMatchedPassword" finished-at="2020-10-24T16:49:49 EET" duration-ms="3629" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCannotRegisterWithInvalidMatchedPassword -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:49 EET" name="tearDown" finished-at="2020-10-24T16:49:49 EET" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserCannotRegisterWithInvalidMatchedPassword status=SUCCESS method=UserRegistrationTest.UserCannotRegisterWithInvalidMatchedPassword()[pri:9, instance:tests.UserRegistrationTest@4865434e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="startdriver(java.lang.String)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:49 EET" name="startdriver" finished-at="2020-10-24T16:49:57 EET" duration-ms="8157" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startdriver -->
+        <test-method signature="UserCanRegisterWithVaildData()[pri:10, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:57 EET" name="UserCanRegisterWithVaildData" finished-at="2020-10-24T16:49:59 EET" duration-ms="2507" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCanRegisterWithVaildData -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:59 EET" name="tearDown" finished-at="2020-10-24T16:49:59 EET" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserCanRegisterWithVaildData status=SUCCESS method=UserRegistrationTest.UserCanRegisterWithVaildData()[pri:10, instance:tests.UserRegistrationTest@4865434e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="startdriver(java.lang.String)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:49:59 EET" name="startdriver" finished-at="2020-10-24T16:50:08 EET" duration-ms="8108" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startdriver -->
+        <test-method signature="UserCannotRegisterWithExistingEmail()[pri:11, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:50:08 EET" name="UserCannotRegisterWithExistingEmail" finished-at="2020-10-24T16:50:11 EET" duration-ms="3740" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCannotRegisterWithExistingEmail -->
+        <test-method is-config="true" signature="startdriver(java.lang.String)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:50:11 EET" name="startdriver" finished-at="2020-10-24T16:50:20 EET" duration-ms="8337" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startdriver -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:50:11 EET" name="tearDown" finished-at="2020-10-24T16:50:11 EET" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserCannotRegisterWithExistingEmail status=SUCCESS method=UserRegistrationTest.UserCannotRegisterWithExistingEmail()[pri:11, instance:tests.UserRegistrationTest@4865434e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="UserCanLoginAndLogoutAfterRegisterSuccessfully()[pri:12, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:50:20 EET" name="UserCanLoginAndLogoutAfterRegisterSuccessfully" finished-at="2020-10-24T16:50:24 EET" duration-ms="4837" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCanLoginAndLogoutAfterRegisterSuccessfully -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.UserRegistrationTest@4865434e]" started-at="2020-10-24T16:50:24 EET" name="tearDown" finished-at="2020-10-24T16:50:24 EET" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserCanLoginAndLogoutAfterRegisterSuccessfully status=SUCCESS method=UserRegistrationTest.UserCanLoginAndLogoutAfterRegisterSuccessfully()[pri:12, instance:tests.UserRegistrationTest@4865434e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.UserRegistrationTest -->
+      <class name="tests.TestImplementingHttpIntercreptorForSignUp">
+        <test-method is-config="true" signature="setExtent()[pri:0, instance:tests.TestImplementingHttpIntercreptorForSignUp@65029fc]" started-at="2020-10-24T16:48:00 EET" name="setExtent" finished-at="2020-10-24T16:48:00 EET" duration-ms="118" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setExtent -->
+        <test-method is-config="true" signature="startdriver(java.lang.String)[pri:0, instance:tests.TestImplementingHttpIntercreptorForSignUp@65029fc]" started-at="2020-10-24T16:48:00 EET" name="startdriver" finished-at="2020-10-24T16:48:09 EET" duration-ms="8709" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startdriver -->
+        <test-method signature="UserCanVerifySigupHttpRequestandValidateTheResponse()[pri:1, instance:tests.TestImplementingHttpIntercreptorForSignUp@65029fc]" started-at="2020-10-24T16:48:09 EET" name="UserCanVerifySigupHttpRequestandValidateTheResponse" finished-at="2020-10-24T16:48:10 EET" duration-ms="1346" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCanVerifySigupHttpRequestandValidateTheResponse -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.TestImplementingHttpIntercreptorForSignUp@65029fc]" started-at="2020-10-24T16:48:10 EET" name="tearDown" finished-at="2020-10-24T16:48:10 EET" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserCanVerifySigupHttpRequestandValidateTheResponse status=SUCCESS method=TestImplementingHttpIntercreptorForSignUp.UserCanVerifySigupHttpRequestandValidateTheResponse()[pri:1, instance:tests.TestImplementingHttpIntercreptorForSignUp@65029fc] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="endReport()[pri:0, instance:tests.TestImplementingHttpIntercreptorForSignUp@65029fc]" started-at="2020-10-24T16:50:24 EET" name="endReport" finished-at="2020-10-24T16:50:25 EET" duration-ms="277" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
+        <test-method is-config="true" signature="stopdriver()[pri:0, instance:tests.TestImplementingHttpIntercreptorForSignUp@65029fc]" started-at="2020-10-24T16:50:25 EET" name="stopdriver" finished-at="2020-10-24T16:50:25 EET" duration-ms="677" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopdriver -->
+      </class> <!-- tests.TestImplementingHttpIntercreptorForSignUp -->
+    </test> <!-- Test -->
+  </suite> <!-- AutomationTask -->
+</testng-results>

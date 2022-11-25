@@ -10,12 +10,12 @@
           <include name="endReport"/>
           <include name="UserCannotRegisterWithInvalidMobileNumber"/>
           <include name="stopdriver"/>
-          <include name="UserCannotRegisterWithFirstnNameAndLastNameStartsWithSmallLetter"/>
+          <include name="UserCannotRegisterWithExistingEmail"/>
           <include name="setExtent"/>
           <include name="UserCannotRegisterWithFirstnNameStartsWithSmallLetter"/>
           <include name="startdriver"/>
           <include name="UserCannotRegisterWithFirstnNameAndLastNameWhenMatched"/>
-          <include name="UserCannotRegisterWithInvalidPassword"/>
+          <include name="navigateToRegister"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- tests.UserRegistrationTest -->

@@ -1,5 +1,9 @@
 package tests;
-import static org.junit.Assert.assertTrue;
+import static org.testng.AssertJUnit.assertTrue;
+import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.fail;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,8 +14,6 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.junit.Assert;
-
 import org.testng.annotations.DataProvider;
 
 import org.testng.annotations.Test;
@@ -23,13 +25,13 @@ import com.github.javafaker.Faker;
 
 import Data.ExcelReaderAndWriter;
 import pages.AccountDashboardPage;
-import pages.Homepage;
-import pages.Loginpage;
+
 import pages.Registerpage;
 
 
 
 
+@Test
 public class UserRegistrationTest extends TestBase {
 	
 	public UserRegistrationTest() throws IOException {
@@ -38,8 +40,7 @@ public class UserRegistrationTest extends TestBase {
 	}
 	Faker fakeData = new Faker();
 	Registerpage registerobject;
-	Homepage homeobject;
-	Loginpage loginobject;
+	
 	AccountDashboardPage DashboardPage;
 	
 	//1.Valid FirstName which must start with capital letter
@@ -92,128 +93,123 @@ public class UserRegistrationTest extends TestBase {
 	
 	
 
+@Test(priority=1)
 	
-	
-	
-	
-@Test(priority=2)
-	public void UserCannotRegisterWithFirstnNameStartsWithSmallLetter() throws IOException, InterruptedException 
+	public void UserCanRegisterWithVaildData() throws IOException, InterruptedException 
 	{
 	
-	String VEmail_1 = fakeData.internet().emailAddress();
-	    Data_Specification="INValid first name";
-		SoftAssert softAssertion= new SoftAssert();
-	
-		TestBase.extentTest = TestBase.extent.startTest("Register Test");
+		TestBase.extentTest = TestBase.extent.startTest("User Can Register With Vaild Data");
 		registerobject= new Registerpage(driver);
-		homeobject=new Homepage(driver);
-		loginobject=new Loginpage(driver);
+		
 		DashboardPage=new AccountDashboardPage(driver);
 		
 		
-        //homeobject.selectLoginORSingup();
-		//homeobject.clickonsignuppage();
-		registerobject.userregistration(NValidfname,Validlname, Vmobile, VEmail_1, password,confirmedPass_1);
+		registerobject.userregistration(Validfname,Validlname, Vmobile, VEmail, prop.getProperty("HereFrom"));
+	//	ER.copydatatofile(Validfname,Validlname,Vmobile, VEmail, password,Data_Specification);
+		assertEquals(DashboardPage.WaitsToDashboardElementsShown(), true,"we can register with valid and happy scenarios");
+
 		
-		ER.copydatatofile(NValidfname,Validlname,Vmobile, VEmail_1, password,Data_Specification);
-	     Thread.sleep(3000);
-		softAssertion.assertFalse(DashboardPage.selectlogoutoraccount.isDisplayed());
-		softAssertion.assertFalse(DashboardPage.selectlogoutoraccount.isEnabled());
+		/*
+		softAssertion.assertTrue(DashboardPage.selectlogoutoraccount.isDisplayed());
+		softAssertion.assertTrue(DashboardPage.selectlogoutoraccount.isEnabled());
 		softAssertion.assertAll();
-	
+		*/
 		
 		//registerobject.userlogout();
 		//loginobject.userlogin(email, password);
 	
 
 	}
+	
+	
+	
+@Test (priority=2)
+public void UserCannotRegisterWithFirstnNameStartsWithSmallLetter() throws IOException, InterruptedException 
+	{
+	
+	   String VEmail_1 = fakeData.internet().emailAddress();
+	   
+	
+		TestBase.extentTest = TestBase.extent.startTest("User Cannot Register With Firstname Starts With Small Letter");
+		registerobject= new Registerpage(driver);
+		DashboardPage=new AccountDashboardPage(driver);
+		
+		
+		
+       
+		registerobject.userregistration(NValidfname,Validlname, Vmobile, VEmail_1,prop.getProperty("HereFrom"));
+		assertEquals(DashboardPage.WaitsToDashboardElementsShown(), false,"we can register with small letters on last name");
+	    
+		Thread.sleep(3000);
+	}
+
+
 
 @Test(priority=3)
-
 public void UserCannotRegisterWithLastNameStartsWithSmallLetter() throws IOException, InterruptedException 
 {
 	
 	String VEmail_2 = fakeData.internet().emailAddress();
 	 Data_Specification="INValid last name";
-	SoftAssert softAssertion= new SoftAssert();
-
-	TestBase.extentTest = TestBase.extent.startTest("Register Test");
+	
+	TestBase.extentTest = TestBase.extent.startTest("User Cannot Register With LastName Starts WithSmallLetter");
 	registerobject= new Registerpage(driver);
-	homeobject=new Homepage(driver);
-	loginobject=new Loginpage(driver);
+	
 	DashboardPage=new AccountDashboardPage(driver);
 	
 	
-    //homeobject.selectLoginORSingup();
-	//homeobject.clickonsignuppage();
-	registerobject.userregistration(Validfname,NValidlname_1, Vmobile, VEmail_2, password,confirmedPass_1);
+	registerobject.userregistration(Validfname,NValidlname_1, Vmobile, VEmail_2,prop.getProperty("HereFrom"));
 	
-	ER.copydatatofile(Validfname,NValidlname_1,Vmobile, VEmail_2, password,Data_Specification);
-	 Thread.sleep(3000);
-	softAssertion.assertFalse(DashboardPage.selectlogoutoraccount.isDisplayed());
-	softAssertion.assertFalse(DashboardPage.selectlogoutoraccount.isEnabled());
-	softAssertion.assertAll();
+	assertEquals(DashboardPage.WaitsToDashboardElementsShown(), false,"we can register with small letters on last name");
+
 	
 
 
 }
+
+
 
 
 
 @Test(priority=4)
-public void UserCannotRegisterWithFirstnNameAndLastNameStartsWithSmallLetter() throws IOException, InterruptedException 
+public void UserCannotRegisterWithFirstnNameAndLastNameWhenMatched() throws IOException, InterruptedException 
 {
-	String VEmail_3 = fakeData.internet().emailAddress();
-    Data_Specification="INValid first and lastname";
-	SoftAssert softAssertion= new SoftAssert();
-
-	TestBase.extentTest = TestBase.extent.startTest("Register Test");
+	String VEmail_4 = fakeData.internet().emailAddress();
+    
+	TestBase.extentTest = TestBase.extent.startTest("User Cannot Register With FirstnName and LastName When Matched");
 	registerobject= new Registerpage(driver);
-	homeobject=new Homepage(driver);
-	loginobject=new Loginpage(driver);
+	
 	DashboardPage=new AccountDashboardPage(driver);
 	
 	
-    //homeobject.selectLoginORSingup();
-	//homeobject.clickonsignuppage();
-	registerobject.userregistration(NValidfname,NValidlname_1, Vmobile, VEmail_3, password,confirmedPass_1);
+    
+	registerobject.userregistration(Validfname,NValidlname_2, Vmobile, VEmail_4,prop.getProperty("HereFrom"));
 	
-	ER.copydatatofile(NValidfname,NValidlname_1,Vmobile, VEmail_3, password,Data_Specification);
-     Thread.sleep(3000);
-	softAssertion.assertFalse(DashboardPage.selectlogoutoraccount.isDisplayed());
-	softAssertion.assertFalse(DashboardPage.selectlogoutoraccount.isEnabled());
-	softAssertion.assertAll();
+	assertEquals(DashboardPage.WaitsToDashboardElementsShown(), false,"we can not register  in case firstName and LastName when are not matched");
 
-	
-	//registerobject.userlogout();
-	//loginobject.userlogin(email, password);
+
 
 
 }
 
-@Test(priority=5)
-public void UserCannotRegisterWithFirstnNameAndLastNameWhenMatched() throws IOException, InterruptedException 
-{
-	String VEmail_4 = fakeData.internet().emailAddress();
-    Data_Specification="INValid"+""+"firstname and last name not matched";
-	SoftAssert softAssertion= new SoftAssert();
 
-	TestBase.extentTest = TestBase.extent.startTest("Register Test");
+@Test(priority=5)
+public void UserCannotRegisterWithInvalidMobileNumber() throws IOException, InterruptedException 
+{
+	String VEmail_5 = fakeData.internet().emailAddress();
+   
+	TestBase.extentTest = TestBase.extent.startTest("User Cannot Register With Invalid Mobile Number");
 	registerobject= new Registerpage(driver);
-	homeobject=new Homepage(driver);
-	loginobject=new Loginpage(driver);
+	
 	DashboardPage=new AccountDashboardPage(driver);
 	
 	
-    //homeobject.selectLoginORSingup();
-	//homeobject.clickonsignuppage();
-	registerobject.userregistration(Validfname,NValidlname_2, Vmobile, VEmail_4, password,confirmedPass_1);
+    
+	registerobject.userregistration(Validfname,Validlname,NVmobile , VEmail_5,prop.getProperty("HereFrom"));
 	
-	ER.copydatatofile(Validfname,NValidlname_2,Vmobile, VEmail_4, password,Data_Specification);
-     Thread.sleep(3000);
-	softAssertion.assertFalse(DashboardPage.selectlogoutoraccount.isDisplayed());
-	softAssertion.assertFalse(DashboardPage.selectlogoutoraccount.isEnabled());
-	softAssertion.assertAll();
+	assertEquals(DashboardPage.WaitsToDashboardElementsShown(), false,"we can register With Invalid Mobile Number");
+
+	 
 
 
 
@@ -221,29 +217,22 @@ public void UserCannotRegisterWithFirstnNameAndLastNameWhenMatched() throws IOEx
 
 
 @Test(priority=6)
-public void UserCannotRegisterWithInvalidMobileNumber() throws IOException, InterruptedException 
+public void UserCannotRegisterWithInvalidEmail() throws IOException, InterruptedException 
 {
-	String VEmail_5 = fakeData.internet().emailAddress();
-    Data_Specification="INValidMobileNumber";
-	SoftAssert softAssertion= new SoftAssert();
+	
+   
 
-	TestBase.extentTest = TestBase.extent.startTest("Register Test");
+	TestBase.extentTest = TestBase.extent.startTest("User Cannot Register With Invalid Email");
 	registerobject= new Registerpage(driver);
-	homeobject=new Homepage(driver);
-	loginobject=new Loginpage(driver);
+	
 	DashboardPage=new AccountDashboardPage(driver);
 	
 	
-    //homeobject.selectLoginORSingup();
-	//homeobject.clickonsignuppage();
-	registerobject.userregistration(Validfname,Validlname,NVmobile , VEmail_5, password,confirmedPass_1);
+   
+	registerobject.userregistration(Validfname,Validlname, Vmobile,email_3,prop.getProperty("HereFrom"));
 	
-	ER.copydatatofile(Validfname,Validlname,NVmobile, VEmail_5, password,Data_Specification);
+	assertEquals(DashboardPage.WaitsToDashboardElementsShown(), false,"we can register With Invalid Email");
 
-	 Thread.sleep(3000);
-	softAssertion.assertFalse(DashboardPage.selectlogoutoraccount.isDisplayed());
-	softAssertion.assertFalse(DashboardPage.selectlogoutoraccount.isEnabled());
-	softAssertion.assertAll();
 
 
 
@@ -251,32 +240,29 @@ public void UserCannotRegisterWithInvalidMobileNumber() throws IOException, Inte
 
 
 @Test(priority=7)
-public void UserCannotRegisterWithInvalidEmail() throws IOException, InterruptedException 
+public void UserCannotRegisterWithExistingEmail() throws IOException, InterruptedException 
 {
-	
-    Data_Specification="INValidEmail";
-	SoftAssert softAssertion= new SoftAssert();
+   
 
-	TestBase.extentTest = TestBase.extent.startTest("Register Test");
+	TestBase.extentTest = TestBase.extent.startTest("User Cannot Register With Existing Email");
 	registerobject= new Registerpage(driver);
-	homeobject=new Homepage(driver);
-	loginobject=new Loginpage(driver);
+	
 	DashboardPage=new AccountDashboardPage(driver);
 	
 	
     //homeobject.selectLoginORSingup();
 	//homeobject.clickonsignuppage();
-	registerobject.userregistration(Validfname,Validlname, Vmobile,email_3 , password,confirmedPass_1);
+	registerobject.userregistration(Validfname,Validlname, Vmobile,email_Matched ,prop.getProperty("HereFrom"));
 	
-	ER.copydatatofile(Validfname,Validlname,Vmobile,email_3 , password,Data_Specification);
-     Thread.sleep(3000);
- 	softAssertion.assertTrue(registerobject.validationAlert.isDisplayed());
-	softAssertion.assertAll();
+	
+	assertEquals(DashboardPage.WaitsToDashboardElementsShown(), false,"we can register With Existing Email");
+
+	
 
 
 
 }
-
+/*
 @Test(priority=8)
 public void UserCannotRegisterWithInvalidPassword() throws IOException, InterruptedException 
 {
@@ -293,7 +279,7 @@ public void UserCannotRegisterWithInvalidPassword() throws IOException, Interrup
 	
     //homeobject.selectLoginORSingup();
 	//homeobject.clickonsignuppage();
-	registerobject.userregistration(Validfname,Validlname, Vmobile,VEmail_6 , NVpassword,Nvalidwithconfirmedpassword);
+	registerobject.userregistration(Validfname,Validlname, Vmobile,VEmail_6 );
 	
 	ER.copydatatofile(Validfname,Validlname,Vmobile,VEmail_6, NVpassword,Data_Specification);
      Thread.sleep(3000);
@@ -332,36 +318,6 @@ public void UserCannotRegisterWithInvalidMatchedPassword() throws IOException, I
 
 
 }
-	@Test(priority=10)
-	
-	public void UserCanRegisterWithVaildData() throws IOException 
-	{
-		Data_Specification="Valid";
-		SoftAssert softAssertion= new SoftAssert();
-	
-		TestBase.extentTest = TestBase.extent.startTest("Register Test");
-		registerobject= new Registerpage(driver);
-		homeobject=new Homepage(driver);
-		loginobject=new Loginpage(driver);
-		DashboardPage=new AccountDashboardPage(driver);
-		
-		
-        //homeobject.selectLoginORSingup();
-		//homeobject.clickonsignuppage();
-		registerobject.userregistration(Validfname,Validlname, Vmobile, VEmail, password,confirmedPass_1);
-		ER.copydatatofile(Validfname,Validlname,Vmobile, VEmail, password,Data_Specification);
-		DashboardPage.WaitsToDashboardElementsShown();
-	
-		softAssertion.assertTrue(DashboardPage.selectlogoutoraccount.isDisplayed());
-		softAssertion.assertTrue(DashboardPage.selectlogoutoraccount.isEnabled());
-		softAssertion.assertAll();
-		
-		
-		//registerobject.userlogout();
-		//loginobject.userlogin(email, password);
-	
-
-	}
 	
 
 	
@@ -422,7 +378,7 @@ public void UserCannotRegisterWithInvalidMatchedPassword() throws IOException, I
 		
 
 	}
-	
+	*/
 	
 
 }

@@ -1,6 +1,9 @@
 package pages;
 
 
+import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -23,17 +26,17 @@ public class Registerpage extends PageBase {
 		super(driver);
 		 js=((JavascriptExecutor)driver);
 		 
-		 wait= new WebDriverWait(driver,10);
+		 wait= new WebDriverWait(driver,Duration.ofSeconds(20));
 
 	}
 	
-	@FindBy(name="firstname")
+	@FindBy(name="fname")
 	WebElement firstnametxtbox;
 
-	@FindBy(name="lastname")
+	@FindBy(name="lname")
 	WebElement lastnametxtbox;
 
-	@FindBy(name="phone")
+	@FindBy(xpath="//label[text()='Phone  ']/parent::div/following-sibling::div/input")
 	WebElement phonenumbertxtbox;
 
 	@FindBy(name="email")
@@ -46,28 +49,37 @@ public class Registerpage extends PageBase {
 	WebElement confirmpasswordtxtbox;
 	
    // @FindBy(xpath="//*[@id=\"headersignupform\"]/div[8]/button")
-	@FindBy(xpath= "//*[@id='headersignupform']/div[8]/button")
+	@FindBy(xpath= "//input[@value='Register']")
 	public WebElement signupbutton;
 	
 
 
-	@FindBy(xpath= "//*[@id='headersignupform']/div[8]/button")
+	@FindBy(xpath= "//div[@class='nf-form-errors']/nf-errors/nf-section/div")
 	public WebElement validationAlert;
 
 
+	@FindBy(xpath= "//div[@class='nf-error-wrap nf-error']/div")
+	public  List<WebElement> fieldAlert;
 
-
-	public void userregistration(String fname, String lname,String phone, String email ,String password,String confirmpassword) 
+	public void userregistration(String fname, String lname,String phone, String email,String herafrom ) throws InterruptedException 
 	{
 		setTextElementText(firstnametxtbox, fname);
 		setTextElementText(lastnametxtbox, lname);
 		setTextElementText(phonenumbertxtbox, phone);
 		setTextElementText(emailtxtbox, email);
-		setTextElementText(passwordtxtbox, password);
-		setTextElementText(confirmpasswordtxtbox, confirmpassword);
-		//clickonbutton(signupbutton);
 		
-		js.executeScript("arguments[0].click();",signupbutton);
+		
+		WebElement  HereFrom= driver.findElement(By.xpath("//label[text()='"+herafrom+"']/preceding-sibling::input"));
+		js.executeScript("arguments[0].scrollIntoView();",HereFrom);
+		Thread.sleep(5000);
+		//wait.until(ExpectedConditions.elementToBeClickable(HereFrom)).click();
+		
+		js.executeScript("arguments[0].click();",HereFrom);
+		//setTextElementText(passwordtxtbox, password);
+		//setTextElementText(confirmpasswordtxtbox, confirmpassword);
+		//clickonbutton(signupbutton);
+		signupbutton.click();
+		//js.executeScript("arguments[0].click();",signupbutton);
 		
 		
 		//Actions actions = new Actions(driver);

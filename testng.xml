@@ -7,10 +7,12 @@
     <parameter name="browser" value="chrome"></parameter>
     <classes>
     
+    
+    
+     <class name="tests.UserRegistrationTest"/>
       <class name="tests.TestImplementingHttpIntercreptorForSignUp"/>
     
-      <class name="tests.UserRegistrationTest"/>
-    
+      
       
     </classes>
   </test> <!-- Test -->

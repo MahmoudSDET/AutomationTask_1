@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -30,15 +31,17 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 
 public class TestBase  {
 
 	public static WebDriver driver;
 	public static Properties prop;
-	static String chromepath =System.getProperty("user.dir")+"\\drivers\\chromedriver.exe";
-	static String firefoxpath =System.getProperty("user.dir")+"\\drivers\\geckodriver.exe";
-	static String InternetExplorerpath =System.getProperty("user.dir")+"\\drivers\\IEDriverServer.exe";
+//	static String chromepath =System.getProperty("user.dir")+"\\drivers\\chromedriver.exe";
+//	static String firefoxpath =System.getProperty("user.dir")+"\\drivers\\geckodriver.exe";
+//	static String InternetExplorerpath =System.getProperty("user.dir")+"\\drivers\\IEDriverServer.exe";
 	static String configpath=System.getProperty("user.dir")+"\\src\\test\\java\\configuration\\config.properties";
 	public  static ExtentReports extent;
 	public  static ExtentTest extentTest;
@@ -50,28 +53,32 @@ public class TestBase  {
 	}
 
 	@Parameters({"browser"})
-	@BeforeMethod
+	@BeforeSuite
 	public  static String startdriver(@Optional("chrome")String browsername)
 	{
 		if(browsername.equalsIgnoreCase("chrome"))
 		{
 
-			System.setProperty("webdriver.chrome.driver", chromepath);
+			//System.setProperty("webdriver.chrome.driver", chromepath);
+			
+		 WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver();
 		}
 		else if(browsername.equalsIgnoreCase("firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver", firefoxpath);
+			//System.setProperty("webdriver.gecko.driver", firefoxpath);
+			WebDriverManager.firefoxdriver().setup();
 			driver=new FirefoxDriver();
 		}
 		else if(browsername.equalsIgnoreCase("internetexplorer"))
 		{
-			System.setProperty("webdriver.ie.driver", InternetExplorerpath);
+		//	System.setProperty("webdriver.ie.driver", InternetExplorerpath);
+			WebDriverManager.iedriver().setup();
 			driver=new InternetExplorerDriver();
 		}
 
-		driver.get(prop.getProperty("URL"));
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //implicit wait to make page load and element
+	//	driver.get(prop.getProperty("URL"));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //implicit wait to make page load and element
 		driver.manage().window().maximize();    //to maximize window 
 		
 		return browsername;
@@ -96,7 +103,13 @@ public class TestBase  {
 		extent.close();
 	}
 	
-	
+	@BeforeMethod
+	public void navigateToRegister() {
+		
+		driver.get(prop.getProperty("URL"));
+		//driver.navigate().refresh();
+		
+	}
 	
 	
 	@AfterMethod
@@ -108,7 +121,7 @@ public class TestBase  {
 			
 			String screenshotPath =getScreenshot(driver, result.getName());
 			extentTest.log(LogStatus.FAIL, extentTest.addScreenCapture(screenshotPath));
-			driver.close();
+		//	driver.close();
 			
 			//to add screenshot in extent report
 			//extentTest.log(LogStatus.FAIL, extentTest.addScreencast(screenshotPath)); //to add screencast/video in extent report

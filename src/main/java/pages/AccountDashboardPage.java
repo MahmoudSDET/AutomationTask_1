@@ -1,5 +1,7 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,32 +13,36 @@ public class AccountDashboardPage  extends PageBase{
 	WebDriverWait wait ;
 	public AccountDashboardPage(WebDriver driver) {
 		super(driver);
-		 wait= new WebDriverWait(driver,10);
+		 wait= new WebDriverWait(driver,Duration.ofSeconds(20));
 		// TODO Auto-generated constructor stub
 	}
 	
-	@FindBy(xpath="//li[@class='d-none d-md-block fl']/div/a[@id='dropdownCurrency']")
-public	WebElement selectlogoutoraccount;
+	@FindBy(xpath="//div[@class='nf-response-msg']/p")
+public	WebElement submittedSuccessfully;
 
 
-	@FindBy(linkText="Logout")
-public	WebElement logout;
 	
 	
-	
-	public void WaitsToDashboardElementsShown()
+	public boolean WaitsToDashboardElementsShown()
 	
 	{
-		
-		wait.until(ExpectedConditions.visibilityOf(selectlogoutoraccount));
+		boolean submittingSuccessfull=false;
+		try {
+		wait.until(ExpectedConditions.visibilityOf(submittedSuccessfully));
+		submittingSuccessfull=true;
+		}catch(Exception ex) {
+			
+			
+		}
+		return submittingSuccessfull;
 	}
-	
+	/*
 	public void userlogout()
 	{
 
 		clickButton(selectlogoutoraccount);
 		clickButton(logout);
 
-	}
+	}*/
 
 }

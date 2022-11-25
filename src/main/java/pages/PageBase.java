@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class PageBase {
 
-	protected WebDriver drvier ; 
+	protected WebDriver driver ; 
 	public JavascriptExecutor jse ; 
 	public Select select ; 
 	public Actions action ; 
@@ -25,7 +25,9 @@ public class PageBase {
 	// create constructor 
 	public PageBase(WebDriver driver) 
 	{
+		
 		PageFactory.initElements(driver, this);
+		this.driver=driver;
 	}
 	
 	protected static void clickButton(WebElement button) 
@@ -38,6 +40,11 @@ public class PageBase {
 		textElement.sendKeys(value);
 	}
 	
+	
+	protected static void selectFromRadioButtons(WebElement selectchoice) 
+	{
+		selectchoice.click();
+	}
 	public void scrollToBottom() 
 	
 	{
@@ -48,6 +55,8 @@ public class PageBase {
 	{
 		element.clear();
 	}
+	
+	
 	
 	
 }

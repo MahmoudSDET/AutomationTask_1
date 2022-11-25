@@ -7,19 +7,14 @@
         <methods>
           <include name="UserCannotRegisterWithLastNameStartsWithSmallLetter"/>
           <include name="endReport"/>
+          <include name="UserCannotRegisterWithInvalidMobileNumber"/>
           <include name="stopdriver"/>
           <include name="UserCannotRegisterWithExistingEmail"/>
-          <include name="UserCannotRegisterWithInvalidMatchedPassword"/>
           <include name="setExtent"/>
-          <include name="UserCanRegisterWithVaildData"/>
-          <include name="UserCannotRegisterWithFirstnNameAndLastNameWhenMatched"/>
-          <include name="UserCannotRegisterWithInvalidEmail"/>
-          <include name="UserCannotRegisterWithInvalidPassword"/>
-          <include name="UserCannotRegisterWithInvalidMobileNumber"/>
-          <include name="UserCanLoginAndLogoutAfterRegisterSuccessfully"/>
-          <include name="UserCannotRegisterWithFirstnNameAndLastNameStartsWithSmallLetter"/>
           <include name="UserCannotRegisterWithFirstnNameStartsWithSmallLetter"/>
           <include name="startdriver"/>
+          <include name="UserCannotRegisterWithFirstnNameAndLastNameWhenMatched"/>
+          <include name="navigateToRegister"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- tests.UserRegistrationTest -->
